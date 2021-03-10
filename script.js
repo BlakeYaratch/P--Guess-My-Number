@@ -23,6 +23,7 @@ var miss = -2;
 var x;
 var correct = 0;
 var bestScore = 0;
+var playerGuessed= [ ]
 document.getElementById("submitBtn").disabled = true;
 
 function startFuntion() {
@@ -31,6 +32,8 @@ function startFuntion() {
   randomNumber = Math.floor(Math.random() * 20) + 1;
   console.log(randomNumber);
   document.getElementById("yourLives").innerHTML = "Amount of lives: 5";
+  playerGuessed= [ ]
+  document.getElementById("numberGuessed").innerHTML="Numbers Guessed:"
 }
 function submitFuntion() {
   var x, text;
@@ -84,6 +87,8 @@ function submitFuntion() {
   if (correct >= 20) {
     endGame();
   }
+  playerGuessed.push(x)
+  document.getElementById("numberGuessed").innerHTML="Number Guessed: " + playerGuessed
 }
 
 //#endregion
